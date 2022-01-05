@@ -1,11 +1,12 @@
 import alpaca_trade_api as tradeapi
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
-APCA_API_KEY_ID = 'PKQO2MBIFUKS9Z8F1G0I'
-APCA_API_SECRET_KEY = 'dXlY06Un4Q0Bx6LsOVomBxP01Trlh8hYdL08Oi08'
-BASE_PAPER_URL = 'https://paper-api.alpaca.markets'
+APCA_API_KEY_ID = os.getenv('APCA_API_KEY_ID')
+APCA_API_SECRET_KEY = os.getenv('APCA_API_SECRET_KEY')
+BASE_PAPER_URL = os.getenv('BASE_PAPER_URL')
 
 api = tradeapi.REST(APCA_API_KEY_ID, APCA_API_SECRET_KEY, BASE_PAPER_URL)
 
